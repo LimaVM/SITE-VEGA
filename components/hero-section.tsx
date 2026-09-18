@@ -18,7 +18,7 @@ export default function HeroSection() {
             <span className="h-px w-8 bg-[#d32f2f]" aria-hidden="true" />Serviços Gerenciados de TI
           </p>
           <h1 className="text-[3.3rem] font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-7xl xl:text-[5.8rem]">
-            Sua rede em<br /><span className="text-[#f05b50]">boas mãos.</span>
+            Sua TI em<br /><span className="text-[#f05b50]">boas mãos.</span>
           </h1>
           <p className="mt-7 max-w-lg text-base leading-[1.8] text-[#b9b9b9] md:text-lg">
             Monitoramos, protegemos e damos suporte à tecnologia da sua empresa.

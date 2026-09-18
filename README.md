@@ -1,30 +1,22 @@
-# Vegan Network clone
+# Vega Network
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Site institucional da Vega Network, com foco em serviços gerenciados de TI (MSP) para empresas. Apresenta a gestão de infraestrutura, monitoramento, suporte, segurança, backup e nuvem.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/denilzalimalopes-7571s-projects/v0-vegan-network-clone)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/tMyFyOn68MX)
+## Desenvolvimento local
 
-## Overview
+Requer Node.js e pnpm.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+```bash
+pnpm install
+pnpm dev
+```
 
-## Deployment
+Abra `http://localhost:3000` no navegador. Para validar a versão de produção, execute `pnpm build`.
 
-Your project is live at:
+## Conteúdo
 
-**[https://vercel.com/denilzalimalopes-7571s-projects/v0-vegan-network-clone](https://vercel.com/denilzalimalopes-7571s-projects/v0-vegan-network-clone)**
+- As seções da página inicial estão em `components/` e são reunidas em `app/page.tsx`.
+- O título e a descrição usados por buscadores estão em `app/layout.tsx`.
+- A mensagem de contato do WhatsApp está em `lib/contact.ts`.
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/tMyFyOn68MX](https://v0.app/chat/tMyFyOn68MX)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+O site é desenvolvido com Next.js, React e Tailwind CSS.

@@ -91,13 +91,13 @@ export default function PartnersCarousel() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e53935]/10 border border-[#e53935]/30 mb-4">
             <span className="w-2 h-2 bg-[#e53935] rounded-full animate-pulse" />
-            <span className="text-sm text-[#e53935] font-medium">Tecnologias & Parceiros</span>
+            <span className="text-sm text-[#e53935] font-medium">Tecnologias do seu ambiente</span>
           </div>
           <h3 className="text-2xl md:text-3xl text-white font-bold">
-            Trabalhamos com as <span className="gradient-text">melhores tecnologias</span>
+            Uma operação conectada às <span className="gradient-text">suas tecnologias</span>
           </h3>
           <p className="text-gray-400 mt-3 max-w-xl mx-auto">
-            Virtualização, Cloud Computing, Infraestrutura de Redes e muito mais
+            Servidores, nuvem, virtualização e redes corporativas em uma gestão integrada.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export default function PartnersCarousel() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-3 mt-8">
-          {["Cloud Computing", "Virtualização", "Soluções Corporativas", "Servidores em Nuvem", "Soluções ISP"].map(
+          {["Nuvem", "Virtualização", "Servidores", "Redes Corporativas", "TI Gerenciada"].map(
             (tag, i) => (
               <span
                 key={i}

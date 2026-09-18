@@ -2,99 +2,70 @@
 
 import {
   Server,
-  Globe,
+  Cloud,
   Activity,
   Users,
   Network,
   Shield,
   Lock,
-  Flame,
-  Layers,
-  Wifi,
-  BarChart3,
   Database,
+  Monitor,
 } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
 const services = [
   {
     icon: Server,
-    title: "Infraestrutura Otimizada",
-    description: "Projetamos e implementamos redes escaláveis com foco em estabilidade e desempenho.",
+    title: "Infraestrutura Gerenciada",
+    description: "Acompanhamos servidores e ambientes de TI para manter a operação estável e organizada.",
     color: "#e53935",
-  },
-  {
-    icon: Globe,
-    title: "BGP",
-    description:
-      "Implementação e otimização de rotas BGP para provedores e redes corporativas, garantindo redundância e conectividade eficiente.",
-    color: "#ff6f61",
   },
   {
     icon: Activity,
-    title: "Monitoramento Avançado",
-    description: "Integrações com Zabbix, Grafana e APIs para uma visão completa da sua rede.",
-    color: "#e53935",
+    title: "Monitoramento Proativo",
+    description: "Observamos disponibilidade, desempenho e alertas para identificar problemas antes que afetem a rotina.",
+    color: "#ff6f61",
   },
   {
     icon: Users,
-    title: "Consultoria Especializada",
-    description: "Análise, planejamento e execução de melhorias para provedores e ISPs.",
-    color: "#ff6f61",
-  },
-  {
-    icon: Network,
-    title: "OSPF",
-    description:
-      "Configuração e tunning de OSPF para redes internas, otimizando a convergência e reduzindo latência entre roteadores.",
-    color: "#e53935",
-  },
-  {
-    icon: Lock,
-    title: "VPNs",
-    description:
-      "Criação de túneis seguros entre filiais, datacenters e provedores utilizando IPsec, L2TP, OpenVPN e WireGuard.",
-    color: "#ff6f61",
-  },
-  {
-    icon: Layers,
-    title: "CGNAT",
-    description:
-      "Implementação de CGNAT escalável para otimizar o uso de endereços IPv4, com logs detalhados e compatibilidade com IPv6.",
+    title: "Suporte ao Usuário",
+    description: "Ajudamos sua equipe a resolver incidentes e solicitações do dia a dia com atendimento remoto.",
     color: "#e53935",
   },
   {
     icon: Shield,
-    title: "Firewall",
-    description:
-      "Desenvolvimento de políticas de segurança avançadas em Mikrotik, Linux e Huawei, com filtragem de tráfego.",
+    title: "Segurança Gerenciada",
+    description: "Acompanhamos controles de proteção e reforçamos a segurança de dispositivos, servidores e acessos.",
     color: "#ff6f61",
   },
   {
-    icon: Flame,
-    title: "MPLS",
-    description:
-      "Configuração de redes MPLS para ISPs e operadoras, permitindo transporte eficiente de múltiplos serviços.",
+    icon: Network,
+    title: "Redes Corporativas",
+    description: "Gerenciamos a conectividade entre escritórios, usuários e serviços para uma operação mais confiável.",
     color: "#e53935",
   },
   {
-    icon: Wifi,
-    title: "Accel-PPP",
-    description:
-      "Implantação e tunning do Accel-PPP para autenticação PPPoE de alta performance, com suporte a RADIUS e DHCPv6.",
+    icon: Lock,
+    title: "Identidade e Acessos",
+    description: "Organizamos permissões e acessos para que cada pessoa utilize os recursos de que precisa com segurança.",
     color: "#ff6f61",
-  },
-  {
-    icon: BarChart3,
-    title: "Zabbix e Grafana",
-    description:
-      "Monitoramento e visualização avançada de métricas de rede com dashboards personalizados e alertas inteligentes.",
-    color: "#e53935",
   },
   {
     icon: Database,
-    title: "DNS Recursivo e Autoritativo",
-    description: "Implantação de servidores DNS de alta performance para resolução local e hospedagem de domínios.",
+    title: "Backup e Recuperação",
+    description: "Acompanhamos rotinas de backup e planos de recuperação para proteger informações essenciais.",
+    color: "#e53935",
+  },
+  {
+    icon: Cloud,
+    title: "Nuvem e Virtualização",
+    description: "Administramos ambientes em nuvem e recursos virtuais com foco em disponibilidade e controle.",
+    color: "#ff6f61",
+  },
+  {
+    icon: Monitor,
+    title: "Gestão de Dispositivos",
+    description: "Cuidamos de estações de trabalho e atualizações para manter os equipamentos prontos para uso.",
     color: "#ff6f61",
   },
 ]
@@ -116,7 +87,7 @@ export default function ServicesSection() {
       { threshold: 0.1, rootMargin: "50px" },
     )
 
-    const cards = document.querySelectorAll("[data-index]")
+    const cards = sectionRef.current?.querySelectorAll("[data-index]") ?? []
     cards.forEach((card) => observer.observe(card))
 
     return () => observer.disconnect()
@@ -139,7 +110,7 @@ export default function ServicesSection() {
             O que <span className="gradient-text">Oferecemos</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Soluções de alta performance e personalização para provedores e empresas de tecnologia.
+            Tecnologia acompanhada de ponta a ponta para dar mais tranquilidade à sua operação.
           </p>
         </div>
 

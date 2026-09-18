@@ -6,34 +6,34 @@ import { MessageCircle } from "lucide-react"
 
 const faqs = [
   {
-    question: "Quais serviços vocês oferecem para ISPs?",
+    question: "O que são serviços gerenciados de TI?",
     answer:
-      "Oferecemos consultoria completa em redes para ISPs, incluindo BGP, OSPF, VPNs, CGNAT, Firewalls, MPLS, monitoramento com Zabbix/Grafana, Accel-PPP, DNS recursivo e autoritativo, e otimização de infraestrutura.",
+      "É o acompanhamento contínuo do ambiente de TI da sua empresa. A Vega reúne monitoramento, manutenção, suporte e segurança para manter pessoas e sistemas trabalhando bem.",
   },
   {
-    question: "É possível terceirizar a gestão de toda a rede?",
+    question: "Vocês podem assumir a gestão da nossa TI atual?",
     answer:
-      "Sim! Oferecemos serviços de gestão remota completa, incluindo monitoramento, configuração e manutenção de rede para ISPs que desejam foco total no atendimento ao cliente e expansão.",
+      "Sim. Começamos entendendo os equipamentos, sistemas e processos existentes. A partir desse levantamento, definimos com você o escopo de gestão e as prioridades da operação.",
   },
   {
-    question: "Vocês fazem implementação de redes ou apenas consultoria?",
+    question: "Quais partes do ambiente podem ser gerenciadas?",
     answer:
-      "Fazemos ambos: consultoria estratégica e implementação prática de redes. Avaliamos sua infraestrutura, projetamos melhorias e aplicamos as soluções diretamente nos equipamentos.",
+      "Podemos acompanhar estações de trabalho, servidores, redes corporativas, ambientes em nuvem, backups e controles de acesso. O plano é ajustado às necessidades da sua empresa.",
   },
   {
-    question: "Como funciona o suporte da consultoria?",
+    question: "Como funciona o suporte aos usuários?",
     answer:
-      "Nosso suporte é personalizado, podendo incluir suporte remoto, revisão de configurações e acompanhamento de projetos. Também fornecemos relatórios e dashboards de monitoramento, garantindo visibilidade completa da rede.",
+      "Sua equipe pode acionar o suporte para incidentes e solicitações do dia a dia. Os canais, horários e níveis de atendimento são definidos no plano contratado.",
   },
   {
-    question: "Quanto tempo leva para implementar uma solução de rede?",
+    question: "Como vocês cuidam de segurança e backup?",
     answer:
-      "O tempo depende do tamanho da rede e da complexidade da solução. Após a análise inicial, entregamos um plano detalhado com prazos realistas.",
+      "Avaliamos os controles existentes, acompanhamos rotinas de proteção e verificamos a estratégia de backup e recuperação. As ações recomendadas dependem dos riscos e prioridades do seu ambiente.",
   },
   {
-    question: "Vocês fornecem treinamento para a equipe do ISP?",
+    question: "Como começa a gestão dos serviços?",
     answer:
-      "Sim, oferecemos treinamentos técnicos personalizados, cobrindo configuração, monitoramento e boas práticas de operação de redes.",
+      "Conversamos sobre sua operação, mapeamos o ambiente e definimos responsabilidades, serviços e próximos passos. Assim, a transição acontece com clareza para sua equipe.",
   },
 ]
 
@@ -59,7 +59,7 @@ export default function FaqSection() {
   }, [])
 
   return (
-    <section className="py-32 relative overflow-hidden" ref={sectionRef}>
+    <section id="faq" className="py-32 relative overflow-hidden" ref={sectionRef}>
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e53935]/5 rounded-full blur-[150px]" />

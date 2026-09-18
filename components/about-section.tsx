@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
+import { whatsappContactUrl } from "@/lib/contact"
 
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -94,13 +95,13 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
-                Na <span className="text-[#e53935] font-semibold">Vega</span>, somos especialistas em soluções de
-                conectividade de alta performance para provedores de internet. Nosso objetivo é transformar a
-                experiência de seus assinantes, garantindo redes seguras, rápidas e escaláveis.
+                Na <span className="text-[#e53935] font-semibold">Vega</span>, cuidamos da operação de TI de empresas
+                que precisam de tecnologia confiável para trabalhar e crescer. Unimos monitoramento, suporte e
+                segurança para reduzir interrupções e dar mais visibilidade ao ambiente.
               </p>
               <p>
-                Com uma equipe experiente em tecnologias de ponta, entregamos soluções sob medida, otimizando
-                infraestrutura e desempenho, enquanto reduzimos riscos e custos operacionais.
+                Atuamos de forma contínua em estações de trabalho, servidores, redes e nuvem. Entendemos o seu
+                ambiente, organizamos prioridades e acompanhamos a evolução da infraestrutura junto com a sua equipe.
               </p>
             </div>
 
@@ -109,8 +110,9 @@ export default function AboutSection() {
               className="bg-transparent border-2 border-[#e53935] text-[#e53935] hover:bg-[#e53935] hover:text-white rounded-full px-8 py-6 text-lg transition-all duration-300"
             >
               <Link
-                href="https://wa.me/557799105385?text=Olá%2C%20sou%20um%20isp"
+                href={whatsappContactUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
                 Começar agora

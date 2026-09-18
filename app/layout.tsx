@@ -7,10 +7,9 @@ import "./globals.css"
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
 
 export const metadata: Metadata = {
-  title: "Vega Network | Consultoria de Redes",
+  title: "Vega Network | Serviços Gerenciados de TI",
   description:
-    "Consultoria de redes especializada em provedores de internet. Projetamos, otimizamos e mantemos infraestruturas de rede de alto desempenho.",
-    generator: 'v0.app'
+    "Serviços gerenciados de TI para empresas: monitoramento, suporte, segurança, backup e gestão de infraestrutura e nuvem.",
 }
 
 export default function RootLayout({

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import VegaLogo from "@/components/vega-logo"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import { whatsappContactUrl } from "@/lib/contact"
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -36,6 +37,7 @@ export default function Header() {
             { href: "#inicio", label: "Início" },
             { href: "#about", label: "Quem somos" },
             { href: "#services", label: "Serviços" },
+            { href: "#faq", label: "Dúvidas" },
           ].map((link, i) => (
             <Link
               key={i}
@@ -54,7 +56,7 @@ export default function Header() {
           asChild
           className="hidden md:flex bg-[#e53935] hover:bg-[#c62828] text-white rounded-full px-6 relative overflow-hidden group"
         >
-          <Link href="https://wa.me/557799105385?text=Olá%2C%20sou%20um%20isp" target="_blank">
+          <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">
             <span className="relative z-10">Contato</span>
             <span className="absolute inset-0 bg-gradient-to-r from-[#ff6f61] to-[#e53935] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
@@ -77,6 +79,7 @@ export default function Header() {
             { href: "#inicio", label: "Início" },
             { href: "#about", label: "Quem somos" },
             { href: "#services", label: "Serviços" },
+            { href: "#faq", label: "Dúvidas" },
           ].map((link, i) => (
             <Link
               key={i}
@@ -88,7 +91,7 @@ export default function Header() {
             </Link>
           ))}
           <Button asChild className="mt-2 bg-[#e53935] hover:bg-[#c62828] text-white rounded-full">
-            <Link href="https://wa.me/557799105385?text=Olá%2C%20sou%20um%20isp" target="_blank">
+            <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">
               Contato
             </Link>
           </Button>

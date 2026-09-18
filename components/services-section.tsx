@@ -1,5 +1,3 @@
-"use client"
-
 import {
   Server,
   Cloud,
@@ -11,7 +9,6 @@ import {
   Database,
   Monitor,
 } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
 
 const services = [
   {
@@ -71,83 +68,25 @@ const services = [
 ]
 
 export default function ServicesSection() {
-  const [visibleCards, setVisibleCards] = useState<number[]>([])
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-index"))
-            setVisibleCards((prev) => [...new Set([...prev, index])])
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: "50px" },
-    )
-
-    const cards = sectionRef.current?.querySelectorAll("[data-index]") ?? []
-    cards.forEach((card) => observer.observe(card))
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="services" className="py-32 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#e53935]/5 rounded-full blur-[150px]" />
-
-      <div className="container mx-auto px-6 relative z-10" ref={sectionRef}>
-        {/* Section header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e53935]/10 border border-[#e53935]/30 mb-6">
-            <span className="w-2 h-2 bg-[#e53935] rounded-full animate-pulse" />
-            <span className="text-sm text-[#e53935] font-medium">Nossos Serviços</span>
+    <section id="services" className="vega-section border-y border-white/10 bg-[#151515]">
+      <div className="container mx-auto px-6">
+        <div className="mb-12 grid gap-6 md:grid-cols-2 md:items-end">
+          <div>
+            <p className="vega-eyebrow mb-4">Nossos Serviços</p>
+            <h2 className="vega-heading">O que Oferecemos</h2>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6">
-            O que <span className="gradient-text">Oferecemos</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="max-w-md text-lg leading-relaxed text-[#b9b9b9] md:justify-self-end">
             Tecnologia acompanhada de ponta a ponta para dar mais tranquilidade à sua operação.
           </p>
         </div>
-
-        {/* Services grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              data-index={index}
-              className={`glass-card rounded-2xl p-8 group cursor-pointer transition-all duration-500 hover:scale-[1.02] hover:border-[#e53935]/50 ${
-                visibleCards.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-              style={{ transitionDelay: `${index * 50}ms` }}
-            >
-              {/* Icon container */}
-              <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
-                style={{
-                  background: `linear-gradient(135deg, ${service.color}20, ${service.color}10)`,
-                  boxShadow: `0 0 30px ${service.color}20`,
-                }}
-              >
-                <service.icon
-                  className="w-7 h-7 transition-all duration-300 group-hover:scale-110"
-                  style={{ color: service.color }}
-                />
-              </div>
-
-              {/* Content */}
-              <h3 className="text-white font-semibold text-xl mb-3 group-hover:text-[#e53935] transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
-
-              {/* Hover effect line */}
-              <div className="mt-6 h-[2px] w-0 bg-gradient-to-r from-[#e53935] to-[#ff6f61] group-hover:w-full transition-all duration-500" />
-            </div>
+        <div className="grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <article key={service.title} className="border-t border-white/15 py-8 md:py-10">
+              <service.icon className="mb-5 h-6 w-6 text-[#e53935]" strokeWidth={1.5} aria-hidden="true" />
+              <h3 className="mb-3 text-xl font-semibold tracking-tight text-white">{service.title}</h3>
+              <p className="text-base leading-relaxed text-[#b9b9b9]">{service.description}</p>
+            </article>
           ))}
         </div>
       </div>

@@ -75,10 +75,9 @@
 }
 
 @theme inline {
-  /* Atualizando fonte para JetBrains Mono */
-  --font-sans: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
-  --font-serif: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
-  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: var(--font-jetbrains), monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -233,4 +232,77 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #ff6f61, #e53935);
+}
+
+/* Vega: restrained typography, clear spacing and the original red signature. */
+.container {
+  max-width: 1200px;
+}
+
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+.vega-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.vega-eyebrow {
+  color: #ff6f61;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vega-heading {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.vega-button {
+  height: 3.25rem;
+  padding-inline: 1.5rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.vega-brand-panel {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid #ffffff14;
+  background: #0b0b0b;
+}
+
+.vega-brand-panel::before {
+  content: "";
+  position: absolute;
+  inset: 17%;
+  border: 1px solid #ffffff0d;
+  transform: rotate(45deg);
+}
+
+.vega-brand-panel::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 48px;
+  height: 3px;
+  background: #e53935;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #ff6f61;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }

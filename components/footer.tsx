@@ -6,23 +6,20 @@ import { ArrowRight, Mail, Phone } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="pt-24 pb-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#e53935]/5 rounded-full blur-[150px]" />
+    <footer className="border-t border-white/10 bg-[#0a0a0a] pt-16 pb-8 md:pt-20">
 
       <div className="container mx-auto px-6 mb-20 relative z-10">
-        <div className="glass-card rounded-3xl p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#e53935]/10 rounded-full blur-[100px]" />
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="border-l-2 border-[#e53935] pl-6 py-2 md:pl-10">
+          <div className="relative z-10 flex flex-col md:flex-row items-start justify-between gap-8">
             <div>
-              <h3 className="text-3xl md:text-4xl text-white font-bold mb-2">
-                Pronto para <span className="gradient-text">simplificar</span> sua TI?
+              <h3 className="text-3xl md:text-4xl text-white font-semibold tracking-tight mb-4">
+                Pronto para <span className="text-white">simplificar</span> sua TI?
               </h3>
               <p className="text-gray-400">Converse com a Vega sobre os serviços gerenciados para sua empresa.</p>
             </div>
             <Button
               asChild
-              className="bg-[#e53935] hover:bg-[#c62828] text-white rounded-full px-8 py-6 text-lg group animate-pulse-glow"
+              className="vega-button shrink-0 bg-[#e53935] hover:bg-[#c62828] text-white group"
             >
               <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 Fale Conosco

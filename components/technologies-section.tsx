@@ -20,7 +20,7 @@ export default function TechnologiesSection() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#ff6f61] md:text-sm">
             Nossa base tecnológica
           </p>
-          <h2 id="technologies-heading" className="text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
+          <h2 id="technologies-heading" className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl md:text-4xl">
             Trabalhamos com as maiores tecnologias do mercado
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-gray-300 sm:text-base">
@@ -32,7 +32,7 @@ export default function TechnologiesSection() {
           {technologies.map((technology) => (
             <li
               key={technology.name}
-              className="flex h-24 w-[calc(50%-0.375rem)] items-center justify-center rounded-xl border border-gray-200 bg-white p-4 shadow-sm sm:h-28 sm:w-44 sm:p-5 md:h-32 md:w-48"
+              className="flex h-24 w-[calc(50%-0.375rem)] items-center justify-center rounded-sm border border-gray-200 bg-white p-4 sm:h-28 sm:w-44 sm:p-5 md:h-32 md:w-48"
             >
               <Image
                 src={technology.logo}

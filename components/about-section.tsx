@@ -1,99 +1,38 @@
-"use client"
-
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { whatsappContactUrl } from "@/lib/contact"
 
 export default function AboutSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="about" className="py-32 relative overflow-hidden" ref={sectionRef}>
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+    <section id="about" className="vega-section">
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Images Grid with simplified effects */}
-          <div
-            className={`relative transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
-          >
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                {/* Image 1 */}
-                <div className="relative h-52 rounded-2xl overflow-hidden group">
-                  <div className="absolute inset-0 border-2 border-[#e53935] rounded-2xl z-10" />
-                  <Image
-                    src="/team-meeting-in-modern-office-with-people-discussi.webp"
-                    alt="Equipe em reunião"
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                {/* Image 2 */}
-                <div className="relative h-52 rounded-2xl overflow-hidden group">
-                  <div className="absolute inset-0 border-2 border-[#e53935] rounded-2xl z-10" />
-                  <Image
-                    src="/man-working-on-laptop-in-office-with-coffee.webp"
-                    alt="Profissional trabalhando"
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-              <div className="pt-10">
-                {/* Image 3 - Larger */}
-                <div className="relative h-80 rounded-2xl overflow-hidden group">
-                  <div className="absolute inset-0 border-2 border-[#e53935] rounded-2xl z-10" />
-                  <Image
-                    src="/smiling-professional-man-with-beard-in-office-wear.webp"
-                    alt="Profissional sorrindo"
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-sm lg:order-1">
+            <Image
+              src="/team-meeting-in-modern-office-with-people-discussi.webp"
+              alt="Equipe em reunião"
+              fill
+              sizes="(min-width: 1024px) 540px, 100vw"
+              className="object-cover"
+            />
           </div>
 
           {/* Content */}
           <div
-            className={`space-y-8 transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
+            className="order-1 space-y-6 lg:order-2"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e53935]/10 border border-[#e53935]/30">
-              <span className="w-2 h-2 bg-[#e53935] rounded-full" />
-              <span className="text-sm text-[#e53935] font-medium">Sobre nós</span>
+            <div className="vega-eyebrow">
+              <span className="text-inherit">Sobre nós</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-white font-bold">
-              Quem <span className="gradient-text">somos?</span>
+            <h2 className="vega-heading">
+              Quem <span className="text-white">somos?</span>
             </h2>
 
-            <div className="space-y-4 text-gray-400 leading-relaxed">
+            <div className="space-y-4 text-[#b9b9b9] text-base leading-relaxed">
               <p>
                 Na <span className="text-[#e53935] font-semibold">Vega</span>, cuidamos da operação de TI de empresas
                 que precisam de tecnologia confiável para trabalhar e crescer. Unimos monitoramento, suporte e
@@ -107,7 +46,7 @@ export default function AboutSection() {
 
             <Button
               asChild
-              className="bg-transparent border-2 border-[#e53935] text-[#e53935] hover:bg-[#e53935] hover:text-white rounded-full px-8 py-6 text-lg transition-all duration-300"
+              className="vega-button bg-transparent border border-white/25 text-white hover:bg-white/5"
             >
               <Link
                 href={whatsappContactUrl}

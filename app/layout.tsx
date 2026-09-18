@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${jetbrains.variable} font-mono antialiased`}>
+      <body className={`${jetbrains.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

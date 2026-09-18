@@ -4,14 +4,11 @@ import AboutSection from "@/components/about-section"
 import ServicesSection from "@/components/services-section"
 import FaqSection from "@/components/faq-section"
 import Footer from "@/components/footer"
-import ParticlesBackground from "@/components/particles-background"
 import TechnologiesSection from "@/components/technologies-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050505] relative overflow-hidden noise-overlay">
-      {/* Animated particles background */}
-      <ParticlesBackground />
+    <main className="min-h-screen bg-[#101010] relative overflow-hidden">
 
       {/* Main content */}
       <div className="relative z-10">

@@ -1,124 +1,50 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { useEffect, useState } from "react"
-import AnimatedGlobe from "./animated-globe"
-import { ArrowRight, Zap } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 import { whatsappContactUrl } from "@/lib/contact"
 
 export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [typedText, setTypedText] = useState("")
-  const fullText = "Sua TI em boas mãos."
-
-  useEffect(() => {
-    setIsVisible(true)
-    let i = 0
-    const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText(fullText.slice(0, i + 1))
-        i++
-      } else {
-        clearInterval(typingInterval)
-      }
-    }, 40)
-    return () => clearInterval(typingInterval)
-  }, [])
-
   return (
-    <section id="inicio" className="min-h-screen pt-32 pb-20 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#e53935]/10 rounded-full blur-[100px] animate-pulse" />
-      <div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-[#ff6f61]/10 rounded-full blur-[120px] animate-pulse"
-        style={{ animationDelay: "1s" }}
-      />
-
-      {/* Scan line effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-[#e53935]/30 to-transparent animate-[scan-line_4s_linear_infinite]" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Content */}
-          <div
-            className={`space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e53935]/10 border border-[#e53935]/30 backdrop-blur-sm">
-              <Zap className="w-4 h-4 text-[#e53935]" />
-              <span className="text-sm text-[#e53935] font-medium">Serviços Gerenciados de TI</span>
-            </div>
-
-            {/* Main heading with typing effect */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-sans font-bold leading-tight">
-              <span className="gradient-text">{typedText}</span>
-              <span className="inline-block w-[3px] h-[1em] bg-[#e53935] ml-1 animate-[blink_1s_infinite]" />
+    <section id="inicio" className="vega-hero pt-36 pb-16 md:pt-44 md:pb-24">
+      <div className="container mx-auto px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+          <div>
+            <p className="vega-eyebrow mb-7">Serviços Gerenciados de TI</p>
+            <h1 className="max-w-3xl text-[3.5rem] font-semibold leading-[1.04] tracking-[-0.055em] text-white sm:text-7xl xl:text-[6rem]">
+              Sua TI em<br />boas mãos<span className="text-[#e53935]">.</span>
             </h1>
-
-            <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
+            <p className="mt-7 max-w-lg text-lg leading-relaxed text-[#b9b9b9] md:text-xl">
               Monitoramos, protegemos e damos suporte à tecnologia da sua empresa.
-              <span className="text-white font-medium"> Você foca no negócio; nós cuidamos da TI.</span>
+              <span className="text-white"> Você foca no negócio; nós cuidamos da TI.</span>
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                className="bg-[#e53935] hover:bg-[#c62828] text-white rounded-full px-8 py-6 text-lg group relative overflow-hidden animate-pulse-glow"
-              >
-                <Link
-                  href={whatsappContactUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <span className="relative z-10">Fale Conosco</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#e53935] to-[#ff6f61] opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="vega-button bg-[#e53935] text-white hover:bg-[#c62828]">
+                <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">
+                  Fale Conosco <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-
-              <Button
-                asChild
-                variant="outline"
-                className="border-[#e53935]/50 text-white hover:bg-[#e53935]/10 hover:border-[#e53935] rounded-full px-8 py-6 text-lg bg-transparent backdrop-blur-sm"
-              >
+              <Button asChild variant="outline" className="vega-button border-white/25 bg-transparent text-white hover:bg-white/5 hover:text-white">
                 <Link href="#services">Ver Serviços</Link>
               </Button>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-800/50">
-              {[
-                { number: "Gestão", label: "Infraestrutura e nuvem" },
-                { number: "Proteção", label: "Dados e ambientes" },
-                { number: "Suporte", label: "Pessoas e operações" },
-              ].map((stat, i) => (
-                <div key={i} className="text-center" style={{ animationDelay: `${i * 0.2}s` }}>
-                  <div className="text-lg md:text-xl font-bold text-white glow-red-text">{stat.number}</div>
-                  <div className="text-sm text-gray-500">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
-
-          {/* Globe */}
-          <div
-            className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}
-          >
-            <AnimatedGlobe />
+          <div className="vega-brand-panel hidden items-center justify-center lg:flex" aria-hidden="true">
+            <Image src="/images/vega-logo.webp" alt="" width={260} height={260} className="relative z-10 h-auto w-56 object-contain" />
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span className="text-xs text-gray-500 uppercase tracking-widest">Scroll</span>
-        <div className="w-[2px] h-8 bg-gradient-to-b from-[#e53935] to-transparent" />
+        <div className="mt-14 grid grid-cols-3 gap-4 border-t border-white/15 pt-7 md:mt-20 md:gap-8">
+          {[
+            { number: "Gestão", label: "Infraestrutura e nuvem" },
+            { number: "Proteção", label: "Dados e ambientes" },
+            { number: "Suporte", label: "Pessoas e operações" },
+          ].map((stat) => (
+            <div key={stat.number}>
+              <div className="mb-2 text-base font-semibold text-white md:text-lg">{stat.number}</div>
+              <div className="text-xs leading-relaxed text-[#a3a3a3] md:text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

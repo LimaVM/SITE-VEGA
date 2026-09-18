@@ -5,7 +5,7 @@ import ServicesSection from "@/components/services-section"
 import FaqSection from "@/components/faq-section"
 import Footer from "@/components/footer"
 import ParticlesBackground from "@/components/particles-background"
-import PartnersCarousel from "@/components/partners-carousel"
+import TechnologiesSection from "@/components/technologies-section"
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <HeroSection />
-        <PartnersCarousel />
+        <TechnologiesSection />
         <AboutSection />
         <ServicesSection />
         <FaqSection />

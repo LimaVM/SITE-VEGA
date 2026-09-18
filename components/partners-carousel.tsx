@@ -6,39 +6,39 @@ import Image from "next/image"
 const partners = [
   {
     name: "Ubiquiti",
-    logo: "/images/ubiquiti.png",
+    logo: "/images/ubiquiti.webp",
   },
   {
     name: "Cisco",
-    logo: "/images/cisco.png",
+    logo: "/images/cisco.webp",
   },
   {
     name: "Oracle Cloud",
-    logo: "/images/oracle-cloud.png",
+    logo: "/images/oracle-cloud.webp",
   },
   {
     name: "MikroTik",
-    logo: "/images/mikrotik.png",
+    logo: "/images/mikrotik.webp",
   },
   {
     name: "Huawei",
-    logo: "/images/huawei.png",
+    logo: "/images/huawei.webp",
   },
   {
     name: "VMware",
-    logo: "/images/vmware.png",
+    logo: "/images/vmware.webp",
   },
   {
     name: "Linux",
-    logo: "/images/linux.png",
+    logo: "/images/linux.webp",
   },
   {
     name: "Datacom",
-    logo: "/images/datacom.png",
+    logo: "/images/datacom.webp",
   },
   {
     name: "Windows Server",
-    logo: "/images/windows-server.png",
+    logo: "/images/windows-server.webp",
   },
 ]
 

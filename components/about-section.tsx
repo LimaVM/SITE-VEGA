@@ -46,7 +46,7 @@ export default function AboutSection() {
                 <div className="relative h-52 rounded-2xl overflow-hidden group">
                   <div className="absolute inset-0 border-2 border-[#e53935] rounded-2xl z-10" />
                   <Image
-                    src="/team-meeting-in-modern-office-with-people-discussi.jpg"
+                    src="/team-meeting-in-modern-office-with-people-discussi.webp"
                     alt="Equipe em reunião"
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -56,7 +56,7 @@ export default function AboutSection() {
                 <div className="relative h-52 rounded-2xl overflow-hidden group">
                   <div className="absolute inset-0 border-2 border-[#e53935] rounded-2xl z-10" />
                   <Image
-                    src="/man-working-on-laptop-in-office-with-coffee.jpg"
+                    src="/man-working-on-laptop-in-office-with-coffee.webp"
                     alt="Profissional trabalhando"
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 <div className="relative h-80 rounded-2xl overflow-hidden group">
                   <div className="absolute inset-0 border-2 border-[#e53935] rounded-2xl z-10" />
                   <Image
-                    src="/smiling-professional-man-with-beard-in-office-wear.jpg"
+                    src="/smiling-professional-man-with-beard-in-office-wear.webp"
                     alt="Profissional sorrindo"
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

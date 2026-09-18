@@ -6,7 +6,7 @@ import "./globals.css"
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
 const siteUrl = "https://site-vega.vercel.app"
-const title = "Vega Network | Serviços Gerenciados de TI"
+const title = "Vega Soluções Empresariais"
 const description =
   "Serviços gerenciados de TI para empresas: monitoramento, suporte, segurança, backup e gestão de infraestrutura e nuvem."
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: siteUrl,
-    siteName: "Vega Network",
+    siteName: "Vega Soluções Empresariais",
     locale: "pt_BR",
     type: "website",
   },

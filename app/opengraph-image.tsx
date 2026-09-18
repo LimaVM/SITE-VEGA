@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
             SERVIÇOS GERENCIADOS DE TI
           </span>
           <span style={{ maxWidth: 980, fontSize: 78, fontWeight: 700, lineHeight: 1.05 }}>
-            Sua TI em boas mãos.
+            Sua rede em boas mãos.
           </span>
           <span style={{ marginTop: 30, color: "#c4c4c4", fontSize: 28 }}>
             Monitoramento, segurança e suporte para empresas.

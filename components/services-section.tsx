@@ -8,8 +8,8 @@ const services = [
     description: "Observamos disponibilidade, desempenho e alertas para identificar problemas antes que afetem a rotina.",
   },
   {
-    title: "Suporte ao Usuário",
-    description: "Ajudamos sua equipe a resolver incidentes e solicitações do dia a dia com atendimento remoto.",
+    title: "Suporte à sua equipe",
+    description: "Ajudamos sua equipe a resolver incidentes, manter a rede protegida, otimizada e estável.",
   },
   {
     title: "Segurança Gerenciada",

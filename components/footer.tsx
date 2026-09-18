@@ -6,20 +6,20 @@ import { ArrowRight, Mail, Phone } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0a0a0a] pt-16 pb-8 md:pt-20">
+    <footer className="bg-[#101010] pt-16 pb-8 md:pt-24">
 
       <div className="container mx-auto px-6 mb-20 relative z-10">
-        <div className="border-l-2 border-[#e53935] pl-6 py-2 md:pl-10">
-          <div className="relative z-10 flex flex-col md:flex-row items-start justify-between gap-8">
+        <div className="border-b border-white/20 pb-14 md:pb-20">
+          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
             <div>
-              <h3 className="text-3xl md:text-4xl text-white font-semibold tracking-tight mb-4">
-                Pronto para <span className="text-white">simplificar</span> sua TI?
+              <h3 className="max-w-2xl text-4xl md:text-5xl text-white font-medium tracking-[-0.04em] leading-tight mb-5">
+                Pronto para <span className="text-[#f05b50]">simplificar</span> sua TI?
               </h3>
               <p className="text-gray-400">Converse com a Vega sobre os serviços gerenciados para sua empresa.</p>
             </div>
             <Button
               asChild
-              className="vega-button shrink-0 bg-[#e53935] hover:bg-[#c62828] text-white group"
+              className="vega-button shrink-0 bg-white hover:bg-[#ecece8] text-[#171717] group"
             >
               <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 Fale Conosco
@@ -31,8 +31,8 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-3 gap-12 mb-16">
-          <div className="space-y-6">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-20 mb-16">
+          <div className="space-y-6 sm:col-span-2 lg:col-span-1">
             <VegaLogo />
             <p className="text-gray-400 text-sm leading-relaxed">
               Serviços gerenciados de TI para empresas. Cuidamos de infraestrutura, segurança e suporte para sua
@@ -42,7 +42,6 @@ export default function Footer() {
 
           <div>
             <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#e53935] rounded-full" />
               Explore
             </h3>
             <ul className="space-y-4">
@@ -63,7 +62,6 @@ export default function Footer() {
 
           <div>
             <h3 className="text-white font-semibold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#e53935] rounded-full" />
               Contato
             </h3>
             <ul className="space-y-4 text-gray-400 text-sm">

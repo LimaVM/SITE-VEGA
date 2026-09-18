@@ -75,9 +75,9 @@
 }
 
 @theme inline {
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-manrope), Arial, Helvetica, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: var(--font-jetbrains), monospace;
+  --font-mono: monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -129,180 +129,40 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Animações otimizadas - removidas animações pesadas */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 0;
-  }
-  51%,
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes rotate-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-.animate-gradient {
-  animation: gradient-shift 6s ease infinite;
-  background-size: 200% 200%;
-}
-.animate-rotate-slow {
-  animation: rotate-slow 30s linear infinite;
-}
-
-/* Grid background pattern */
-.bg-grid-pattern {
-  background-image: linear-gradient(rgba(229, 57, 53, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(229, 57, 53, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #e53935 50%, #ff6f61 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow effects simplificados */
-.glow-red {
-  box-shadow: 0 0 15px rgba(229, 57, 53, 0.3);
-}
-
-.glow-red-text {
-  text-shadow: 0 0 10px rgba(229, 57, 53, 0.4);
-}
-
-/* Glassmorphism */
-.glass {
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.glass-card {
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
-  border: 1px solid rgba(229, 57, 53, 0.1);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #e53935, #c62828);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ff6f61, #e53935);
-}
-
-/* Vega: restrained typography, clear spacing and the original red signature. */
-.container {
-  max-width: 1200px;
-}
-
-section[id] {
-  scroll-margin-top: 96px;
-}
-
-.vega-section {
-  padding-block: clamp(4rem, 8vw, 7rem);
-}
-
+/* Vega visual system */
+.container { max-width: 1240px; }
+section[id] { scroll-margin-top: 120px; }
+.vega-section { padding-block: clamp(4rem, 8vw, 7.5rem); }
 .vega-eyebrow {
-  color: #ff6f61;
+  color: #f05b50;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
-
 .vega-heading {
   color: #fff;
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
   line-height: 1.12;
   text-wrap: balance;
 }
-
+.vega-light { color: #242424; }
+.vega-light .vega-heading { color: #171717; }
+.vega-light .vega-eyebrow { color: #bd302d; }
 .vega-button {
-  height: 3.25rem;
-  padding-inline: 1.5rem;
-  border-radius: 3px;
-  font-size: 1rem;
-  font-weight: 500;
+  height: 3.4rem;
+  padding-inline: 1.6rem;
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  font-weight: 600;
 }
-
-.vega-brand-panel {
-  position: relative;
-  aspect-ratio: 1;
-  border: 1px solid #ffffff14;
-  background: #0b0b0b;
-}
-
-.vega-brand-panel::before {
-  content: "";
-  position: absolute;
-  inset: 17%;
-  border: 1px solid #ffffff0d;
-  transform: rotate(45deg);
-}
-
-.vega-brand-panel::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 48px;
-  height: 3px;
-  background: #e53935;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid #ff6f61;
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #e53935;
   outline-offset: 4px;
 }
-
+::selection { background: #e53935; color: white; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }

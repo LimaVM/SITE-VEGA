@@ -28,7 +28,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Button asChild className="hidden rounded-sm bg-[#e53935] px-6 text-white hover:bg-[#c62828] md:inline-flex">
+        <Button asChild className="hidden rounded-sm bg-[#d32f2f] px-6 text-white hover:bg-[#c62828] md:inline-flex">
           <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">Contato</Link>
         </Button>
         <button
@@ -47,7 +47,7 @@ export default function Header() {
             {link.label}
           </Link>
         ))}
-        <Button asChild className="mt-5 w-full rounded-sm bg-[#e53935] text-white hover:bg-[#c62828]">
+        <Button asChild className="mt-5 w-full rounded-sm bg-[#d32f2f] text-white hover:bg-[#c62828]">
           <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">Contato</Link>
         </Button>
       </nav>

@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { JetBrains_Mono } from "next/font/google"
+import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" })
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
 const siteUrl = "https://site-vega.vercel.app"
 const title = "Vega Network | Serviços Gerenciados de TI"
 const description =
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${jetbrains.variable} font-sans antialiased`}>
+      <body className={`${manrope.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

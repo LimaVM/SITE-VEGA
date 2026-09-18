@@ -1,50 +1,52 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { whatsappContactUrl } from "@/lib/contact"
+
+const pillars = [
+  { title: "Gestão", description: "Infraestrutura e nuvem", href: "#gestao" },
+  { title: "Proteção", description: "Dados e ambientes", href: "#protecao" },
+  { title: "Suporte", description: "Pessoas e operações", href: "#suporte" },
+]
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="vega-hero pt-36 pb-16 md:pt-44 md:pb-24">
-      <div className="container mx-auto px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
-          <div>
-            <p className="vega-eyebrow mb-7">Serviços Gerenciados de TI</p>
-            <h1 className="max-w-3xl text-[3.5rem] font-semibold leading-[1.04] tracking-[-0.055em] text-white sm:text-7xl xl:text-[6rem]">
-              Sua TI em<br />boas mãos<span className="text-[#e53935]">.</span>
-            </h1>
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-[#b9b9b9] md:text-xl">
-              Monitoramos, protegemos e damos suporte à tecnologia da sua empresa.
-              <span className="text-white"> Você foca no negócio; nós cuidamos da TI.</span>
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild className="vega-button bg-[#e53935] text-white hover:bg-[#c62828]">
-                <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">
-                  Fale Conosco <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="vega-button border-white/25 bg-transparent text-white hover:bg-white/5 hover:text-white">
-                <Link href="#services">Ver Serviços</Link>
-              </Button>
-            </div>
-          </div>
-          <div className="vega-brand-panel hidden items-center justify-center lg:flex" aria-hidden="true">
-            <Image src="/images/vega-logo.webp" alt="" width={260} height={260} className="relative z-10 h-auto w-56 object-contain" />
+    <section id="inicio" className="bg-[#101010] pt-36 pb-16 md:pt-44 md:pb-24">
+      <div className="container mx-auto grid gap-14 px-6 lg:grid-cols-[1.7fr_1fr] lg:items-end lg:gap-24">
+        <div>
+          <p className="mb-8 flex items-center gap-3 text-sm font-medium text-[#d6d6d6]">
+            <span className="h-px w-8 bg-[#d32f2f]" aria-hidden="true" />Serviços Gerenciados de TI
+          </p>
+          <h1 className="text-[3.3rem] font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-7xl xl:text-[5.8rem]">
+            Sua TI em<br /><span className="text-[#f05b50]">boas mãos.</span>
+          </h1>
+          <p className="mt-7 max-w-lg text-base leading-[1.8] text-[#b9b9b9] md:text-lg">
+            Monitoramos, protegemos e damos suporte à tecnologia da sua empresa.
+            <span className="text-white"> Você foca no negócio; nós cuidamos da TI.</span>
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-7">
+            <Button asChild className="vega-button bg-[#d32f2f] text-white hover:bg-[#c62828]">
+              <Link href={whatsappContactUrl} target="_blank" rel="noopener noreferrer">
+                Fale Conosco <ArrowUpRight className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Link href="#services" className="inline-flex min-h-12 items-center justify-center gap-3 text-sm font-medium text-white underline-offset-8 hover:underline sm:justify-start">
+              Ver Serviços <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
-        <div className="mt-14 grid grid-cols-3 gap-4 border-t border-white/15 pt-7 md:mt-20 md:gap-8">
-          {[
-            { number: "Gestão", label: "Infraestrutura e nuvem" },
-            { number: "Proteção", label: "Dados e ambientes" },
-            { number: "Suporte", label: "Pessoas e operações" },
-          ].map((stat) => (
-            <div key={stat.number}>
-              <div className="mb-2 text-base font-semibold text-white md:text-lg">{stat.number}</div>
-              <div className="text-xs leading-relaxed text-[#a3a3a3] md:text-sm">{stat.label}</div>
-            </div>
+        <nav aria-label="Áreas de atuação" className="border-t border-white/20 lg:mb-1">
+          {pillars.map((pillar, index) => (
+            <Link key={pillar.title} href={pillar.href} className="group flex items-center gap-5 border-b border-white/20 py-6 transition-colors hover:bg-white/[0.03] lg:py-8">
+              <span className="self-start pt-2 font-mono text-xs text-[#f05b50]" aria-hidden="true">0{index + 1}</span>
+              <div className="flex-1">
+                <p className="text-2xl font-medium tracking-tight text-white lg:text-3xl">{pillar.title}</p>
+                <p className="mt-1 text-sm text-[#b9b9b9]">{pillar.description}</p>
+              </div>
+              <ArrowUpRight className="h-5 w-5 text-[#b9b9b9] transition-colors group-hover:text-[#f05b50]" aria-hidden="true" />
+            </Link>
           ))}
-        </div>
+        </nav>
       </div>
     </section>
   )

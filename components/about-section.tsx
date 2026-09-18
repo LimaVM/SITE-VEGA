@@ -6,11 +6,11 @@ import { whatsappContactUrl } from "@/lib/contact"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="vega-section">
+    <section id="about" className="vega-section vega-light bg-[#f5f4f0]">
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-sm lg:order-1">
+        <div className="grid lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-20 items-center">
+          <div className="relative order-2 aspect-[4/3] overflow-hidden lg:order-1">
             <Image
               src="/team-meeting-in-modern-office-with-people-discussi.webp"
               alt="Equipe em reunião"
@@ -29,12 +29,12 @@ export default function AboutSection() {
             </div>
 
             <h2 className="vega-heading">
-              Quem <span className="text-white">somos?</span>
+              Quem <span className="text-inherit">somos?</span>
             </h2>
 
-            <div className="space-y-4 text-[#b9b9b9] text-base leading-relaxed">
+            <div className="space-y-4 text-[#595955] text-base leading-[1.85]">
               <p>
-                Na <span className="text-[#e53935] font-semibold">Vega</span>, cuidamos da operação de TI de empresas
+                Na <span className="text-[#bd302d] font-semibold">Vega</span>, cuidamos da operação de TI de empresas
                 que precisam de tecnologia confiável para trabalhar e crescer. Unimos monitoramento, suporte e
                 segurança para reduzir interrupções e dar mais visibilidade ao ambiente.
               </p>
@@ -46,7 +46,7 @@ export default function AboutSection() {
 
             <Button
               asChild
-              className="vega-button bg-transparent border border-white/25 text-white hover:bg-white/5"
+              className="vega-button bg-[#171717] text-white hover:bg-[#333333]"
             >
               <Link
                 href={whatsappContactUrl}

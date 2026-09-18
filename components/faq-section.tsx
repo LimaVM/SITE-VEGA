@@ -37,19 +37,19 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="vega-section">
+    <section id="faq" className="vega-section vega-light bg-[#f5f4f0]">
       <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <div>
           <p className="vega-eyebrow mb-4">FAQ</p>
           <h2 className="vega-heading">Perguntas frequentes</h2>
         </div>
-        <Accordion type="single" collapsible className="border-t border-white/20">
+        <Accordion type="single" collapsible className="border-t border-black/20">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/15">
-              <AccordionTrigger className="py-6 text-left text-base font-medium text-white hover:text-[#ff6f61] hover:no-underline md:text-lg">
+            <AccordionItem key={index} value={`item-${index}`} className="border-b border-black/15">
+              <AccordionTrigger className="py-6 text-left text-base font-medium text-[#242424] hover:text-[#bd302d] hover:no-underline md:text-lg">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="max-w-2xl pr-6 pb-6 text-base leading-relaxed text-[#b9b9b9]">{faq.answer}</AccordionContent>
+              <AccordionContent className="max-w-2xl pr-6 pb-6 text-base leading-relaxed text-[#595955]">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

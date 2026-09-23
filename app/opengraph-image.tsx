@@ -1,8 +1,12 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "Vega Network — Serviços Gerenciados de TI"
+export const alt = "Vega Soluções Empresariais — infraestrutura, redes e segurança gerenciadas"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
+
+const BRAND = "#FF3900"
+const DEEP = "#0B0810"
+const ICE = "#CFC9D6"
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -15,29 +19,46 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           padding: "72px 80px",
-          backgroundColor: "#080808",
+          backgroundColor: DEEP,
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <div style={{ width: 14, height: 36, marginRight: 20, backgroundColor: "#e53935" }} />
-          <span style={{ fontSize: 36, fontWeight: 700, letterSpacing: 8 }}>VEGA</span>
+          <svg width="150" height="46" viewBox="0 0 1000 305.22">
+            <g fill={BRAND}>
+              <path d="M 67.64,81.22 L 148.87,0.0 L 230.09,81.22 L 202.73,108.58 L 148.87,54.72 L 95.0,108.58 Z" />
+              <path d="M 0.0,155.42 L 148.87,305.22 L 297.73,155.42 L 259.51,117.44 L 148.87,228.78 L 38.22,117.44 Z" />
+            </g>
+            <g fill="#ffffff">
+              <path d="M 193.92,142.73 C 173.39,142.73 148.31,169.8 148.31,191.94 C 148.31,169.8 123.22,142.73 102.69,142.73 C 123.22,142.73 148.31,115.66 148.31,93.51 C 148.31,115.66 173.39,142.73 193.92,142.73 Z" />
+              <path d="M 337.56,94.55 L 414.56,223.05 L 491.56,94.55 L 472.11,94.55 L 414.56,190.59 L 357.01,94.55 Z" />
+              <path d="M 528.11,94.55 L 544.8,94.55 L 544.8,223.05 L 528.11,223.05 Z" />
+              <path d="M 528.11,94.55 L 627.57,94.55 L 627.57,111.23 L 528.11,111.23 Z" />
+              <path d="M 528.11,151.62 L 627.57,151.62 L 627.57,168.3 L 528.11,168.3 Z" />
+              <path d="M 528.11,206.37 L 627.57,206.37 L 627.57,223.05 L 528.11,223.05 Z" />
+              <path d="M 795.5,200.07 C 778.26,221.36 749.79,230.01 723.63,221.89 C 697.46,213.78 678.88,190.54 676.72,163.23 C 674.56,135.92 689.25,110.05 713.82,97.92 C 738.38,85.79 767.86,89.85 788.23,108.17 L 777.07,120.58 C 761.78,106.82 739.65,103.77 721.2,112.88 C 702.76,121.98 691.72,141.41 693.35,161.91 C 694.97,182.42 708.92,199.87 728.57,205.96 C 748.22,212.06 769.59,205.56 782.53,189.57 Z" />
+              <path d="M 788.4,166.49 L 805.09,166.49 L 805.09,237.53 L 788.4,237.53 Z" />
+              <path d="M 924.77,87.8 L 849.53,223.05 L 868.62,223.05 L 924.77,122.11 Z" />
+              <path d="M 924.77,87.8 L 1000.0,223.05 L 980.91,223.05 L 924.77,122.11 Z" />
+              <path d="M 871.55,183.46 L 977.98,183.46 L 987.26,200.14 L 862.27,200.14 Z" />
+            </g>
+          </svg>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <span style={{ marginBottom: 22, color: "#ff6f61", fontSize: 24, fontWeight: 700, letterSpacing: 3 }}>
-            SERVIÇOS GERENCIADOS DE TI
+          <span style={{ marginBottom: 22, color: BRAND, fontSize: 22, fontWeight: 700, letterSpacing: 4 }}>
+            SOLUÇÕES EMPRESARIAIS
           </span>
-          <span style={{ maxWidth: 980, fontSize: 78, fontWeight: 700, lineHeight: 1.05 }}>
-            Sua TI em boas mãos.
+          <span style={{ maxWidth: 1000, fontSize: 64, fontWeight: 700, lineHeight: 1.08 }}>
+            Você não precisa de alguém que apareça. Precisa de alguém que não falhe.
           </span>
-          <span style={{ marginTop: 30, color: "#c4c4c4", fontSize: 28 }}>
-            Monitoramento, segurança e suporte para empresas.
+          <span style={{ marginTop: 28, color: ICE, fontSize: 26 }}>
+            Infraestrutura, redes e segurança gerenciadas — com monitoramento e backup próprios.
           </span>
         </div>
 
-        <div style={{ width: 260, height: 7, backgroundColor: "#e53935" }} />
+        <div style={{ display: "flex", width: 260, height: 7, backgroundColor: BRAND }} />
       </div>
     ),
     size,

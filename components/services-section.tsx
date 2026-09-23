@@ -1,79 +1,123 @@
-const services = [
+import {
+  Server,
+  Network,
+  Cloud,
+  ShieldCheck,
+  KeyRound,
+  DatabaseBackup,
+  Activity,
+  Headset,
+  type LucideIcon,
+} from "lucide-react"
+import Reveal from "@/components/reveal"
+
+type Service = { title: string; description: string; icon: LucideIcon }
+
+const services: Service[] = [
   {
     title: "Infraestrutura Gerenciada",
-    description: "Acompanhamos servidores e ambientes de TI para manter a operação estável e organizada.",
-  },
-  {
-    title: "Monitoramento Proativo",
-    description: "Observamos disponibilidade, desempenho e alertas para identificar problemas antes que afetem a rotina.",
-  },
-  {
-    title: "Suporte à sua equipe",
-    description: "Ajudamos sua equipe a resolver incidentes, manter a rede protegida, otimizada e estável.",
-  },
-  {
-    title: "Segurança Gerenciada",
-    description: "Acompanhamos controles de proteção e reforçamos a segurança de dispositivos, servidores e acessos.",
+    description:
+      "Servidores, virtualização e os serviços que a operação usa todo dia, acompanhados de perto para que problema apareça como aviso, não como parada.",
+    icon: Server,
   },
   {
     title: "Redes Corporativas",
-    description: "Gerenciamos a conectividade entre escritórios, usuários e serviços para uma operação mais confiável.",
-  },
-  {
-    title: "Identidade e Acessos",
-    description: "Organizamos permissões e acessos para que cada pessoa utilize os recursos de que precisa com segurança.",
-  },
-  {
-    title: "Backup e Recuperação",
-    description: "Acompanhamos rotinas de backup e planos de recuperação para proteger informações essenciais.",
+    description:
+      "Conectividade entre unidades, usuários e sistemas: segmentação, roteamento e links redundantes desenhados para o tráfego que você realmente tem.",
+    icon: Network,
   },
   {
     title: "Nuvem e Virtualização",
-    description: "Administramos ambientes em nuvem e recursos virtuais com foco em disponibilidade e controle.",
+    description:
+      "Ambientes em nuvem e máquinas virtuais dimensionados ao que você usa, com controle de acesso e de custo.",
+    icon: Cloud,
   },
   {
-    title: "Gestão de Dispositivos",
-    description: "Cuidamos de estações de trabalho e atualizações para manter os equipamentos prontos para uso.",
+    title: "Segurança Gerenciada",
+    description:
+      "Firewall, controle de borda e políticas de proteção em dispositivos e servidores, revisados conforme a operação muda.",
+    icon: ShieldCheck,
   },
-]
-
-const groups = [
-  { id: "gestao", title: "Gestão", services: [services[0], services[4], services[7]] },
-  { id: "protecao", title: "Proteção", services: [services[3], services[5], services[6]] },
-  { id: "suporte", title: "Suporte", services: [services[1], services[2], services[8]] },
+  {
+    title: "Identidade e Acessos",
+    description:
+      "Quem acessa o quê, com qual permissão — e o que acontece no dia em que alguém entra ou sai da empresa.",
+    icon: KeyRound,
+  },
+  {
+    title: "Backup e Recuperação",
+    description:
+      "Rotina de cópia dos arquivos dos seus servidores, com retenção definida, verificação de integridade e teste de restauração — porque backup que ninguém testa não protege ninguém.",
+    icon: DatabaseBackup,
+  },
+  {
+    title: "Monitoramento",
+    description:
+      "Disponibilidade, desempenho e alertas do ambiente observados de forma contínua, para que a falha chegue até nós antes de chegar até você.",
+    icon: Activity,
+  },
+  {
+    title: "Retaguarda para o seu TI",
+    description:
+      "Trabalhamos com empresas que já têm um profissional ou uma equipe de TI. Entramos como especialista de apoio — em rede, segurança e infraestrutura — para quem já cuida do ambiente e precisa de reforço, não de substituto.",
+    icon: Headset,
+  },
 ]
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="vega-section vega-light border-t border-black/10 bg-[#f5f4f0]">
-      <div className="container mx-auto px-6">
-        <div className="mb-12 grid gap-6 md:grid-cols-2 md:items-end lg:mb-16">
-          <div>
-            <p className="vega-eyebrow mb-4">Nossos Serviços</p>
-            <h2 className="vega-heading">O que Oferecemos</h2>
-          </div>
-          <p className="max-w-md text-base leading-[1.8] text-[#595955] md:justify-self-end md:text-lg">
-            Tecnologia acompanhada de ponta a ponta para dar mais tranquilidade à sua operação.
-          </p>
+    <section id="redes" className="slide bg-deep">
+      <div className="container-vega">
+        <div className="max-w-3xl">
+          <Reveal>
+            <p className="eyebrow">Redes e infraestrutura</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="heading-section mt-5 text-white">
+              A operação de TI que sua empresa não deveria precisar pensar.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-base leading-[1.8] text-ice sm:text-lg">
+              Cuidamos de servidores, redes, nuvem e segurança de forma contínua — ao lado de quem
+              já responde pela TI da sua empresa.
+            </p>
+          </Reveal>
         </div>
-        <div className="grid gap-10 lg:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-black/15">
-          {groups.map((group, index) => (
-            <section id={group.id} key={group.id} aria-labelledby={`${group.id}-heading`} className="service-group lg:px-8 lg:first:pl-0 lg:last:pr-0">
-              <div className="mb-7 flex items-baseline justify-between border-b-2 border-[#242424] pb-5">
-                <h3 id={`${group.id}-heading`} className="text-3xl font-medium tracking-tight text-[#171717]">{group.title}</h3>
-                <span className="font-mono text-xs text-[#bd302d]" aria-hidden="true">0{index + 1}</span>
-              </div>
-              <div className="space-y-8">
-                {group.services.map((service) => (
-                  <article key={service.title}>
-                    <h4 className="mb-3 text-base font-bold text-[#242424]">{service.title}</h4>
-                    <p className="text-sm leading-[1.8] text-[#595955]">{service.description}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
+
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-lg bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <Reveal
+                as="li"
+                key={service.title}
+                delay={Math.min(index, 5) * 0.04}
+                className="flex flex-col gap-4 bg-deep p-6"
+              >
+                <Icon className="h-6 w-6 text-brand" aria-hidden="true" strokeWidth={1.5} />
+                <div>
+                  <h3 className="text-base font-semibold text-white">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-[1.7] text-ice/85">{service.description}</p>
+                </div>
+              </Reveal>
+            )
+          })}
+        </ul>
+
+        <Reveal>
+          <blockquote className="mx-auto mt-14 max-w-2xl border-l-2 border-brand pl-6 sm:pl-8">
+            <p className="text-base leading-[1.75] text-ice sm:text-lg">
+              Rede boa é assim: ninguém percebe que existe. Ninguém comenta que o link está de pé,
+              que o firewall barrou alguma coisa, que o failover chaveou às 3 da manhã e a operação
+              nem sentiu.
+            </p>
+            <p className="mt-4 text-base leading-[1.75] text-white sm:text-lg">
+              O trabalho bem feito em infraestrutura é invisível por definição. Só aparece quando
+              falta.
+            </p>
+          </blockquote>
+        </Reveal>
       </div>
     </section>
   )

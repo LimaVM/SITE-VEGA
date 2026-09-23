@@ -1,25 +1,33 @@
 import Header from "@/components/header"
-import HeroSection from "@/components/hero-section"
-import AboutSection from "@/components/about-section"
+import SmoothScroll from "@/components/smooth-scroll"
+import RackOpening from "@/components/rack-opening"
+import ManifestoSection from "@/components/manifesto-section"
+import AboutVegaSection from "@/components/about-vega-section"
 import ServicesSection from "@/components/services-section"
+import SystemsSection from "@/components/systems-section"
+import SolutionsSection from "@/components/solutions-section"
+import TechnologiesSection from "@/components/technologies-section"
+import InstagramSection from "@/components/instagram-section"
 import FaqSection from "@/components/faq-section"
 import Footer from "@/components/footer"
-import TechnologiesSection from "@/components/technologies-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#101010] relative overflow-hidden">
-
-      {/* Main content */}
-      <div className="relative z-10">
-        <Header />
-        <HeroSection />
-        <AboutSection />
+    <>
+      <SmoothScroll />
+      <Header />
+      <main id="conteudo">
+        <RackOpening />
+        <ManifestoSection />
+        <AboutVegaSection />
         <ServicesSection />
+        <SystemsSection />
+        <SolutionsSection />
         <TechnologiesSection />
+        <InstagramSection />
         <FaqSection />
-        <Footer />
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }

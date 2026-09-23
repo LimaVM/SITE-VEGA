@@ -1,83 +1,70 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
+/*
+  Sistema de cor da Vega.
+  Token unico de laranja: #FF3900 -> oklch(0.6505 0.2373 33.43).
+  A marca proibe multiplos laranjas convivendo; todo estado deriva
+  deste mesmo hue por variacao de lightness/alpha.
+*/
 :root {
-  --background: oklch(0.05 0.01 0);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.08 0.01 0);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.08 0.01 0);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.6 0.25 25);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.12 0 0);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.15 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.6 0.25 25);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.6 0.25 25);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.1 0 0);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.6 0.25 25);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.15 0 0);
-  --sidebar-accent-foreground: oklch(0.95 0 0);
-  --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: oklch(0.6 0.25 25);
-}
+  --brand: oklch(0.6505 0.2373 33.43);
+  --brand-hover: oklch(0.5800 0.2200 33.43);
+  --brand-soft: oklch(0.7400 0.1900 33.43);
+  /* Texto sobre o laranja e' preto: branco mede 3.60:1 e reprova AA. */
+  --brand-ink: oklch(0.1429 0.0181 301.81);
 
-.dark {
-  --background: oklch(0.05 0.01 0);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.08 0.01 0);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.08 0.01 0);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.6 0.25 25);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.12 0 0);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.15 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.6 0.25 25);
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.15 0 0);
-  --ring: oklch(0.6 0.25 25);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.1 0 0);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.6 0.25 25);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.15 0 0);
-  --sidebar-accent-foreground: oklch(0.95 0 0);
-  --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: oklch(0.6 0.25 25);
+  --deep: oklch(0.1429 0.0181 301.81);
+  --deep-raised: oklch(0.1950 0.0170 301.81);
+  --ice: oklch(0.8446 0.0190 306.62);
+  --graphite: oklch(0.3361 0.0222 307.73);
+  --paper: oklch(0.9700 0.0030 306.00);
+
+  --background: var(--deep);
+  --foreground: oklch(0.9800 0.0020 306.00);
+  --card: var(--deep-raised);
+  --card-foreground: var(--foreground);
+  --popover: var(--deep-raised);
+  --popover-foreground: var(--foreground);
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-ink);
+  --secondary: oklch(0.2400 0.0160 301.81);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.2400 0.0160 301.81);
+  --muted-foreground: var(--ice);
+  --accent: var(--brand);
+  --accent-foreground: var(--brand-ink);
+  --destructive: oklch(0.5770 0.2450 27.33);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: var(--brand);
+  --radius: 0.25rem;
+
+  /* Temporizacao do design system da Vega (tokens/motion.css). */
+  --dur-instant: 80ms;
+  --dur-fast: 140ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+  --dur-slower: 520ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
-  --font-sans: var(--font-manrope), Arial, Helvetica, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: monospace;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo-black), var(--font-geist), sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-deep: var(--deep);
+  --color-deep-raised: var(--deep-raised);
+  --color-ice: var(--ice);
+  --color-graphite: var(--graphite);
+  --color-paper: var(--paper);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -97,72 +84,128 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 8px);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--brand);
+    color: var(--brand-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  .container-vega {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .container-vega {
+      padding-inline: 2rem;
+    }
+  }
+
+  /*
+    Um "slide" por bloco: ocupa a tela e centra o proprio conteudo.
+    svh, e nao vh, porque no celular vh ignora a barra de endereco e corta
+    a base do bloco. O conteudo que passar da tela simplesmente estica o
+    bloco — nada fica inacessivel.
+  */
+  .slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    padding-block: clamp(5rem, 12svh, 8rem);
+    scroll-margin-top: 0;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 5.2vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .heading-section {
+    font-size: clamp(1.8rem, 3.6vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  /* Blocos de fundo claro: o grafite so' tem contraste sobre papel. */
+  .on-light {
+    background: var(--paper);
+    color: var(--graphite);
+  }
+  .on-light .heading-section,
+  .on-light .heading-display {
+    color: oklch(0.18 0.015 305);
+  }
 }
 
-/* Vega visual system */
-.container { max-width: 1240px; }
-section[id] { scroll-margin-top: 120px; }
-.vega-section { padding-block: clamp(4rem, 8vw, 7.5rem); }
-.vega-eyebrow {
-  color: #f05b50;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+/*
+  Snap de slide apenas onde ele ajuda: tela alta o bastante para um bloco
+  caber, e sem preferencia por menos movimento. `proximity` prende quando
+  o leitor para perto de um bloco, mas nunca sequestra quem esta' passando
+  direto — `mandatory` faria isso e tornaria blocos longos incomodos.
+*/
+@media (min-height: 640px) and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  .slide {
+    scroll-snap-align: start;
+  }
 }
-.vega-heading {
-  color: #fff;
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 1.12;
-  text-wrap: balance;
-}
-.vega-light { color: #242424; }
-.vega-light .vega-heading { color: #171717; }
-.vega-light .vega-eyebrow { color: #bd302d; }
-.vega-button {
-  height: 3.4rem;
-  padding-inline: 1.6rem;
-  border-radius: 4px;
-  font-size: 0.9375rem;
-  font-weight: 600;
-}
-a:focus-visible, button:focus-visible {
-  outline: 2px solid #e53935;
-  outline-offset: 4px;
-}
-::selection { background: #e53935; color: white; }
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

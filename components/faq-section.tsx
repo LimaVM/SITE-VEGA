@@ -9,21 +9,21 @@ import { faqs } from "@/lib/faqs"
 */
 export default function FaqSection() {
   return (
-    <section id="faq" className="slide on-light">
+    <section id="faq" className="slide bg-deep text-ice">
       <div className="container-vega grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <div>
           <Reveal>
             <p className="eyebrow">Dúvidas</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="heading-section mt-5">Perguntas frequentes</h2>
+            <h2 className="heading-section mt-5 text-white">Perguntas frequentes</h2>
           </Reveal>
         </div>
 
-        <Reveal className="border-t border-current/20">
+        <Reveal className="border-t border-white/15">
           {faqs.map((faq) => (
-            <details key={faq.question} className="group border-b border-current/15">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-base font-semibold transition-colors hover:text-brand md:text-lg [&::-webkit-details-marker]:hidden">
+            <details key={faq.question} className="group border-b border-white/10">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-base font-semibold text-white transition-colors hover:text-brand md:text-lg [&::-webkit-details-marker]:hidden">
                 {faq.question}
                 <Plus
                   className="h-5 w-5 shrink-0 text-brand transition-transform duration-300 group-open:rotate-45"

@@ -14,10 +14,8 @@ import {
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
-  { href: "#manifesto", label: "O nome" },
-  { href: "#vega", label: "A Vega" },
+  { href: "#quem-somos", label: "Quem somos" },
   { href: "#redes", label: "Redes e infraestrutura" },
-  { href: "#sistemas", label: "Órbita e Pulsar" },
   { href: "#solucoes", label: "Soluções empresariais" },
   { href: "#instagram", label: "Instagram" },
   { href: "#faq", label: "Perguntas frequentes" },
@@ -52,11 +50,10 @@ export default function Footer() {
 
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr] lg:gap-16">
           <div className="sm:col-span-2 lg:col-span-1">
-            <VegaLogo className="h-8 w-auto text-white" />
+            <VegaLogo className="h-14 w-auto text-white" />
             <p className="mt-6 max-w-sm text-sm leading-[1.8] text-ice/80">
-              Infraestrutura, redes e segurança gerenciadas para empresas — com sistemas de
-              monitoramento e backup desenvolvidos por nós. E o desenvolvimento do que a sua
-              operação precisa e não existe pronto.
+              Infraestrutura, redes e segurança gerenciadas para empresas. E o desenvolvimento
+              do que a sua operação precisa e não existe pronto.
             </p>
           </div>
 

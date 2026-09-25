@@ -54,7 +54,7 @@ export default function OpenGraphImage() {
             Você não precisa de alguém que apareça. Precisa de alguém que não falhe.
           </span>
           <span style={{ marginTop: 28, color: ICE, fontSize: 26 }}>
-            Infraestrutura, redes e segurança gerenciadas — com monitoramento e backup próprios.
+            Infraestrutura, redes e segurança gerenciadas para empresas.
           </span>
         </div>
 

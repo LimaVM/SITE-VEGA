@@ -21,7 +21,7 @@ const archivoBlack = Archivo_Black({
 const siteUrl = "https://www.vegasolucoes.com.br"
 const title = "Vega Soluções Empresariais"
 const description =
-  "Infraestrutura, redes e segurança gerenciadas para empresas — com sistemas de monitoramento e backup desenvolvidos pela própria Vega. E automações, agentes e sistemas sob medida."
+  "Infraestrutura, redes e segurança gerenciadas para empresas. E automações, agentes e sistemas sob medida para a sua operação."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

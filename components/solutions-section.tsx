@@ -44,7 +44,7 @@ const solutions: Solution[] = [
 
 export default function SolutionsSection() {
   return (
-    <section id="solucoes" className="slide on-light">
+    <section id="solucoes" className="slide bg-deep text-ice">
       <div className="container-vega">
         <div className="grid gap-8 md:grid-cols-2 md:items-end">
           <div>
@@ -52,7 +52,7 @@ export default function SolutionsSection() {
               <p className="eyebrow">Soluções empresariais</p>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="heading-section mt-5">
+              <h2 className="heading-section mt-5 text-white">
                 Depois que a base está de pé, dá para construir em cima.
               </h2>
             </Reveal>
@@ -71,7 +71,7 @@ export default function SolutionsSection() {
             return (
               <Reveal as="li" key={solution.title} delay={Math.min(index, 5) * 0.05}>
                 <Icon className="h-6 w-6 text-brand" aria-hidden="true" strokeWidth={1.5} />
-                <h3 className="mt-5 border-b border-current/15 pb-4 text-lg font-semibold">
+                <h3 className="mt-5 border-b border-white/10 pb-4 text-lg font-semibold text-white">
                   {solution.title}
                 </h3>
                 <p className="mt-4 text-sm leading-[1.8]">{solution.description}</p>

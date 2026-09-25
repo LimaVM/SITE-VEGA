@@ -29,25 +29,7 @@ export default function SystemsSection() {
   return (
     <section id="sistemas" className="slide bg-deep-raised">
       <div className="container-vega">
-        <div className="max-w-3xl">
-          <Reveal>
-            <p className="eyebrow">O que construímos</p>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="heading-section mt-5 text-white">
-              Não revendemos ferramenta dos outros.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-6 text-base leading-[1.8] text-ice sm:text-lg">
-              Os sistemas que sustentam o nosso trabalho são desenvolvidos aqui dentro. Quando algo
-              precisa mudar para atender a sua operação, a mudança está na nossa mão — não numa fila
-              de suporte de fabricante.
-            </p>
-          </Reveal>
-        </div>
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <Reveal className="flex flex-col rounded-lg border border-brand/30 bg-brand/[0.06] p-7 md:p-9">
             <div className="flex items-baseline gap-3">
               <h3 className="font-display text-2xl text-white md:text-3xl">Órbita</h3>

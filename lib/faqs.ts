@@ -7,11 +7,6 @@ export const faqs: Faq[] = [
       "É o acompanhamento contínuo do ambiente de TI da sua empresa. Reunimos monitoramento, manutenção, suporte e segurança para manter pessoas e sistemas trabalhando bem — em vez de atender só quando algo quebra.",
   },
   {
-    question: "O que significa dizer que o backup e o monitoramento são sistemas de vocês?",
-    answer:
-      "Significa que não somos revendedores de uma ferramenta de terceiro. O sistema que copia os arquivos dos seus servidores e o que observa disponibilidade e desempenho do ambiente foram desenvolvidos pela Vega. Na prática: quando algo precisa mudar para atender a sua operação, a mudança está na nossa mão.",
-  },
-  {
     question: "Vocês podem assumir a gestão da nossa TI atual?",
     answer:
       "Sim. Começamos entendendo os equipamentos, sistemas e processos existentes. A partir desse levantamento, definimos com você o escopo de gestão e as prioridades da operação.",

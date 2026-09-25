@@ -128,18 +128,11 @@
   }
 
   /*
-    Um "slide" por bloco: ocupa a tela e centra o proprio conteudo.
-    svh, e nao vh, porque no celular vh ignora a barra de endereco e corta
-    a base do bloco. O conteudo que passar da tela simplesmente estica o
-    bloco — nada fica inacessivel.
+    Blocos de uma pagina continua: mesmo fundo, altura do proprio conteudo.
+    Sem tela cheia por bloco, a leitura corre sem a sensacao de "virar slide".
   */
   .slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100svh;
-    padding-block: clamp(5rem, 12svh, 8rem);
-    scroll-margin-top: 0;
+    padding-block: clamp(3.5rem, 6vw, 5.5rem);
   }
 
   section[id] {
@@ -170,30 +163,42 @@
     text-wrap: balance;
   }
 
-  /* Blocos de fundo claro: o grafite so' tem contraste sobre papel. */
-  .on-light {
-    background: var(--paper);
-    color: var(--graphite);
-  }
-  .on-light .heading-section,
-  .on-light .heading-display {
-    color: oklch(0.18 0.015 305);
-  }
+}
+
+/* Faixa de tecnologias: rola sozinha e pausa no hover. Sem mascara nas pontas:
+   o degrade deixava o card de borda acinzentado. */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.marquee {
+  overflow: hidden;
+}
+.marquee-track {
+  width: max-content;
+  animation: marquee 55s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
 }
 
 /*
-  Snap de slide apenas onde ele ajuda: tela alta o bastante para um bloco
-  caber, e sem preferencia por menos movimento. `proximity` prende quando
-  o leitor para perto de um bloco, mas nunca sequestra quem esta' passando
-  direto — `mandatory` faria isso e tornaria blocos longos incomodos.
+  Sem scroll-snap: ele disputa a posicao com o Lenis e produz os trancos
+  entre um bloco e outro.
 */
-@media (min-height: 640px) and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-snap-type: y proximity;
-  }
-  .slide {
-    scroll-snap-align: start;
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {

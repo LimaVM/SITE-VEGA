@@ -105,19 +105,6 @@ export default function ServicesSection() {
           })}
         </ul>
 
-        <Reveal>
-          <blockquote className="mx-auto mt-14 max-w-2xl border-l-2 border-brand pl-6 sm:pl-8">
-            <p className="text-base leading-[1.75] text-ice sm:text-lg">
-              Rede boa é assim: ninguém percebe que existe. Ninguém comenta que o link está de pé,
-              que o firewall barrou alguma coisa, que o failover chaveou às 3 da manhã e a operação
-              nem sentiu.
-            </p>
-            <p className="mt-4 text-base leading-[1.75] text-white sm:text-lg">
-              O trabalho bem feito em infraestrutura é invisível por definição. Só aparece quando
-              falta.
-            </p>
-          </blockquote>
-        </Reveal>
       </div>
     </section>
   )

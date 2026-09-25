@@ -8,9 +8,8 @@ import VegaLogo from "@/components/vega-logo"
 import { whatsappContactUrl } from "@/lib/contact"
 
 const links = [
-  { href: "#vega", label: "A Vega" },
+  { href: "#quem-somos", label: "Quem somos" },
   { href: "#redes", label: "Redes" },
-  { href: "#sistemas", label: "Sistemas" },
   { href: "#solucoes", label: "Soluções" },
   { href: "#faq", label: "Dúvidas" },
 ]
@@ -18,23 +17,46 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    /*
+      A barra so' aparece quando a abertura termina de montar o logo:
+      o fim da secao #inicio e' o ultimo quadro da sequencia fixa.
+    */
+    const onScroll = () => {
+      const opening = document.getElementById("inicio")
+      const end = opening ? opening.offsetTop + opening.offsetHeight - window.innerHeight : 0
+      setScrolled(window.scrollY > 24)
+      setVisible(window.scrollY >= end - 2)
+    }
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
+    window.addEventListener("resize", onScroll)
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
+    }
   }, [])
+
+  useEffect(() => {
+    if (!visible) setOpen(false)
+  }, [visible])
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "border-b border-white/10 bg-deep/90 backdrop-blur-md" : "bg-transparent"
-      }`}
+      inert={!visible}
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-full opacity-0"
+      } ${scrolled || open ? "border-b border-white/10 bg-deep/90 backdrop-blur-md" : "bg-transparent"}`}
     >
       <div className="container-vega flex h-20 items-center justify-between">
-        <Link href="#inicio" aria-label="Vega — Início" onClick={() => setOpen(false)}>
-          <VegaLogo className="h-7 w-auto text-white" title={null} />
+        <Link
+          href="#inicio"
+          aria-label="Vega Soluções Empresariais — Início"
+          onClick={() => setOpen(false)}
+        >
+          <VegaLogo variant="inline" className="h-9 w-auto text-white md:h-10" title={null} />
         </Link>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-9 md:flex">

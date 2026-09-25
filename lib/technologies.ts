@@ -27,8 +27,8 @@ export const technologies: Technology[] = [
   { name: "Proxmox", logo: "/images/tech/proxmox.svg", scale: 0.72 },
   { name: "Cloudflare", logo: "/images/tech/cloudflare.svg", scale: 0.78 },
   { name: "Zabbix" },
-  { name: "Linux", logo: "/images/linux.webp", scale: 1.15 },
+  { name: "Linux", logo: "/images/linux.webp", scale: 0.9 },
   { name: "Windows Server", logo: "/images/windows-server.webp", scale: 1.15 },
   { name: "PostgreSQL", logo: "/images/tech/postgresql.svg", scale: 0.72 },
-  { name: "Datacom", logo: "/images/datacom.webp", scale: 1.15 },
+  { name: "Datacom", logo: "/images/datacom.webp" },
 ]
